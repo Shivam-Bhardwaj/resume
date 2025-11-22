@@ -1,0 +1,12 @@
+{
+  "name": "resume-automation",
+  "version": "1.0.0",
+  "description": "Automated PDF generation for resume",
+  "main": "generate_pdf.js",
+  "scripts": {
+    "build": "node generate_pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}
