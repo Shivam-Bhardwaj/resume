@@ -1,0 +1,26 @@
+{
+    "name": "Shivam Bhardwaj",
+    "contact": {
+        "location": "San Jose, CA",
+        "phone": "929-289-4539",
+        "email": "curious.antimony@gmail.com",
+        "website": "https://shivambhardwaj.com",
+        "linkedin": "https://linkedin.com/in/shivambdj",
+        "github": "https://github.com/shivam-bhardwaj",
+        "twitter": "https://x.com/LazyShivam"
+    },
+    "education": [
+        {
+            "id": "nyu",
+            "degree": "M.S. Mechatronics & Robotics",
+            "school": "New York University",
+            "detail": "Research: AI4CE Lab – Real-time visual localization using Deep Learning (SLAM without GPS)"
+        },
+        {
+            "id": "ipu",
+            "degree": "B.Tech Electronics",
+            "school": "I.P. University, Delhi",
+            "detail": "Award: Top 3 University Projects – Developed ArduPilot-based Autonomous Drone"
+        }
+    ]
+}

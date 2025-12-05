@@ -1,0 +1,16 @@
+{
+  "version": "recruiter",
+  "outputFile": "Shivam_Bhardwaj_Resume_Recruiter",
+  "tagline": "Senior AI-Augmented Robotics & Automation Engineer",
+  "showVisaBadge": true,
+  "visaBadgeText": "H-1B Transfer Ready",
+  "summary": "6+ years bridging <strong>Mechanical Design</strong> (Siemens NX), <strong>Software</strong> (Python/ROS/C++), and <strong>Operations</strong>. Specialist in <strong>AI-Accelerated Engineering</strong>—leveraging LLMs and modern AI stacks to rapidly deploy full-stack automation tools, reducing development cycles from weeks to days. Proven track record delivering critical hardware for <strong>Meta, Applied Materials, Amazon Robotics, and Saildrone</strong>.",
+  "sections": {
+    "summary": true,
+    "skills": true,
+    "experience": true,
+    "education": true
+  },
+  "experienceOrder": ["design-visionaries", "aes", "velodyne", "monogram"],
+  "skillsOrder": ["AI & Robotics", "Hardware/CAD", "Automation", "Process/Tools"]
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}} Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+        @page {
+            margin: 0;
+            size: letter;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0f172a; /* Slate 900 */
+            --accent-color: #2563eb; /* Blue 600 */
+            --text-main: #334155; /* Slate 700 */
+            --text-light: #64748b; /* Slate 500 */
+            --bg-sidebar: #f8fafc; /* Slate 50 */
+            --border-color: #e2e8f0; /* Slate 200 */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            font-size: 9pt;
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 8.5in;
+            height: 11in;
+            display: grid;
+            grid-template-columns: 66% 34%; /* Main Content | Sidebar */
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        /* LEFT COLUMN */
+        .main-column {
+            padding: 0.5in 0.4in;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* RIGHT COLUMN */
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            padding: 0.5in 0.3in;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-left: 1px solid var(--border-color);
+        }
+
+        /* HEADER (Name & Title) - Spans mainly the left, but visually distinct */
+        .header-section {
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 24pt;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 10pt;
+            font-weight: 500;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        /* SECTIONS */
+        .section-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title.sidebar-title {
+            color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* Summary */
+        .summary p {
+            margin: 0;
+            text-align: justify;
+            color: var(--text-main);
+            line-height: 1.45;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 12px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .job-company {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .job-dates {
+            font-size: 8.5pt;
+            color: var(--text-light);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .job-subtitle {
+            font-size: 8.5pt;
+            color: var(--accent-color);
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .job ul {
+            margin: 4px 0 0 0;
+            padding-left: 16px;
+        }
+
+        .job li {
+            margin-bottom: 3px;
+            font-size: 9pt;
+            color: var(--text-main);
+        }
+
+        .job li::marker {
+            color: var(--accent-color);
+            font-size: 0.8em;
+        }
+
+        /* SIDEBAR COMPONENTS */
+        
+        /* Contact Info */
+        .contact-info {
+            font-size: 9pt;
+            line-height: 1.8;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+        }
+
+        .contact-item a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.1s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 12px;
+        }
+
+        .skill-cat-name {
+            font-weight: 700;
+            font-size: 8.5pt;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-tag {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 8pt;
+            color: var(--text-main);
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 10px;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .edu-school {
+            font-size: 8.5pt;
+            color: var(--text-main);
+        }
+
+        .edu-detail {
+            font-size: 8pt;
+            color: var(--text-light);
+            margin-top: 2px;
+            font-style: italic;
+        }
+
+        .visa-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 8pt;
+            font-weight: 600;
+            margin-top: 8px;
+            border: 1px solid #86efac;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- MAIN COLUMN (Left 66%) -->
+        <div class="main-column">
+            
+            <header class="header-section">
+                <h1>{{name}}</h1>
+                <div class="tagline">{{tagline}}</div>
+            </header>
+
+            {{#if sections.summary}}
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <div class="summary">
+                    {{{summary}}}
+                </div>
+            </div>
+            {{/if}}
+
+            {{#if sections.experience}}
+            <div class="section">
+                <div class="section-title">Experience</div>
+                {{#each experience}}
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <span class="job-title">{{title}}</span>
+                            <span class="job-company">, {{company}}</span>
+                        </div>
+                        <span class="job-dates">{{dates}}</span>
+                    </div>
+                    {{#if subtitle}}
+                    <div class="job-subtitle">{{subtitle}}</div>
+                    {{/if}}
+                    <ul>
+                        {{#each bullets}}
+                        <li>{{{text}}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+        </div>
+
+        <!-- SIDEBAR (Right 34%) -->
+        <div class="sidebar">
+            
+            <div class="section">
+                <div class="section-title sidebar-title">Contact</div>
+                <div class="contact-info">
+                    <div class="contact-item">{{contact.location}}</div>
+                    <div class="contact-item"><a href="tel:{{contact.phone}}">{{contact.phone}}</a></div>
+                    <div class="contact-item"><a href="mailto:{{contact.email}}">{{contact.email}}</a></div>
+                    <div class="contact-item"><a href="{{contact.website}}">shivambhardwaj.com</a></div>
+                    <div class="contact-item"><a href="{{contact.linkedin}}">LinkedIn/shivambdj</a></div>
+                    <div class="contact-item"><a href="{{contact.github}}">GitHub/shivam-bhardwaj</a></div>
+                    {{#if showVisaBadge}}
+                    <div class="visa-badge">{{visaBadgeText}}</div>
+                    {{/if}}
+                </div>
+            </div>
+
+            {{#if sections.skills}}
+            <div class="section">
+                <div class="section-title sidebar-title">Expertise</div>
+                {{#each skills}}
+                <div class="skill-category">
+                    <span class="skill-cat-name">{{@key}}</span>
+                    <div class="skill-tags">
+                        {{#each (splitByComma this)}}
+                        <span class="skill-tag">{{this}}</span>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if sections.education}}
+            <div class="section">
+                <div class="section-title sidebar-title">Education</div>
+                {{#each education}}
+                <div class="edu-item">
+                    <span class="edu-degree">{{degree}}</span>
+                    <div class="edu-school">{{school}}</div>
+                    {{#if detail}}
+                    <div class="edu-detail">{{detail}}</div>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+        </div>
+    </div>
+</body>
+
+</html>

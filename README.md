@@ -43,6 +43,17 @@ I treat my resume as code. This repository uses **Headless Chrome** to automate 
 3.  **Deploy:** Auto-published to GitHub Pages.
 
 ```bash
-# Generate PDF locally
-node generate_pdf.js
+# 1. Install the Rust CLI (first time only)
+cargo install --path cli
+
+# 2. Update Experience (Codex)
+# Edit files in src/codex/experience/
+
+# 3. Validation & AI Critique
+resume-cli check
+resume-cli critique all
+
+# 4. Build & Generate PDF
+resume-cli build
+node src/scripts/generate-pdf.js
 ```

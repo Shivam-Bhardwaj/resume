@@ -1,0 +1,66 @@
+{
+  "contact": {
+    "email": "curious.antimony@gmail.com",
+    "github": "https://github.com/shivam-bhardwaj",
+    "linkedin": "https://linkedin.com/in/shivambdj",
+    "location": "San Jose, CA",
+    "phone": "929-289-4539",
+    "twitter": "https://x.com/LazyShivam",
+    "website": "https://shivambhardwaj.com"
+  },
+  "education": [
+    {
+      "degree": "M.S. Mechatronics & Robotics",
+      "detail": "Research: AI4CE Lab – Real-time visual localization using Deep Learning (SLAM without GPS)",
+      "id": "nyu",
+      "school": "New York University"
+    },
+    {
+      "degree": "B.Tech Electronics",
+      "detail": "Award: Top 3 University Projects – Developed ArduPilot-based Autonomous Drone",
+      "id": "ipu",
+      "school": "I.P. University, Delhi"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Advanced Engineering Services",
+      "dates": "Sep 2022 – Mar 2023",
+      "id": "aes",
+      "location": "San Jose, CA",
+      "subtitle": "Clients: Meta (Facebook) & Applied Materials",
+      "title": "Engineering Manager"
+    },
+    {
+      "company": "Design Visionaries",
+      "dates": "Mar 2023 – Present",
+      "id": "design-visionaries",
+      "location": "San Jose, CA",
+      "subtitle": "Clients: Applied Materials, Saildrone, Industrial IoT",
+      "title": "Mechatronics Engineer"
+    },
+    {
+      "company": "Monogram Orthopedics (ARI)",
+      "dates": "Jan 2020 – Dec 2020",
+      "id": "monogram",
+      "location": "Austin, TX",
+      "subtitle": null,
+      "title": "Robotics Software Engineer"
+    },
+    {
+      "company": "Velodyne Lidar",
+      "dates": "Jan 2021 – Sep 2022",
+      "id": "velodyne",
+      "location": "San Jose, CA",
+      "subtitle": "R&D Software Team Lead",
+      "title": "Senior Robotics Engineer"
+    }
+  ],
+  "name": "Shivam Bhardwaj",
+  "skills": {
+    "AI & Robotics": "C++, Rust, Python, ROS/ROS2, LLM Integration, CV (OpenCV, YOLO)",
+    "Automation": "Industrial IoT, PLC (Beckhoff), LabView, Sensor Fusion",
+    "Hardware/CAD": "Siemens NX (Open API), SolidWorks, Rhino3D, GD&T, Prototyping",
+    "Process/Tools": "5S Methodology, ERP Integration, Git, Jira, Wiring/Harnessing"
+  }
+}

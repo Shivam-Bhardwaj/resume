@@ -1,3 +1,7 @@
 node_modules/
 .DS_Store
 npm-debug.log
+cli/target/
+dist/
+# Optional: Ignore generated PDFs if you don't want them in history
+# *.pdf
