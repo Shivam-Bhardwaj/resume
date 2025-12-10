@@ -5,17 +5,21 @@
   "scripts": {
     "build:html": "node src/scripts/build.js all",
     "build:pdf": "node src/scripts/generate-pdf.js",
-    "drc:check": "cargo run -q --manifest-path cli/Cargo.toml -- check",
-    "drc:build": "cargo run -q --manifest-path cli/Cargo.toml -- build",
-    "drc:critique": "cargo run -q --manifest-path cli/Cargo.toml -- critique",
+    "drc:check": "node src/scripts/validate.js",
+    "drc:build": "node src/scripts/assemble.js",
+    "drc:critique": "echo 'Critique not yet ported to Node.js'",
     "build": "npm run drc:check && npm run drc:build && npm run build:html && npm run build:pdf",
     "build:recruiter": "node src/scripts/build.js recruiter && node src/scripts/generate-pdf.js recruiter",
     "build:founder": "node src/scripts/build.js founder && node src/scripts/generate-pdf.js founder",
+    "snapshot": "node src/scripts/snapshot.js",
     "archive": "node src/scripts/archive.js",
     "release": "npm run archive && npm run build"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
+    "gray-matter": "^4.0.3",
     "handlebars": "^4.7.8",
+    "marked": "^17.0.1",
     "puppeteer": "^23.0.0"
   }
 }

@@ -1,66 +1,198 @@
 {
+  "name": "Shivam Bhardwaj",
   "contact": {
-    "email": "curious.antimony@gmail.com",
-    "github": "https://github.com/shivam-bhardwaj",
-    "linkedin": "https://linkedin.com/in/shivambdj",
     "location": "San Jose, CA",
     "phone": "929-289-4539",
-    "twitter": "https://x.com/LazyShivam",
-    "website": "https://shivambhardwaj.com"
+    "email": "curious.antimony@gmail.com",
+    "website": "https://shivambhardwaj.com",
+    "linkedin": "https://linkedin.com/in/shivambdj",
+    "github": "https://github.com/shivam-bhardwaj",
+    "twitter": "https://x.com/LazyShivam"
   },
   "education": [
     {
-      "degree": "M.S. Mechatronics & Robotics",
-      "detail": "Research: AI4CE Lab – Real-time visual localization using Deep Learning (SLAM without GPS)",
       "id": "nyu",
-      "school": "New York University"
+      "degree": "M.S. Mechatronics & Robotics",
+      "school": "New York University",
+      "detail": "Research: AI4CE Lab – Real-time visual localization using Deep Learning (SLAM without GPS)"
     },
     {
-      "degree": "B.Tech Electronics",
-      "detail": "Award: Top 3 University Projects – Developed ArduPilot-based Autonomous Drone",
       "id": "ipu",
-      "school": "I.P. University, Delhi"
+      "degree": "B.Tech Electronics",
+      "school": "I.P. University, Delhi",
+      "detail": "Award: Top 3 University Projects – Developed ArduPilot-based Autonomous Drone"
     }
   ],
-  "experience": [
-    {
-      "company": "Advanced Engineering Services",
-      "dates": "Sep 2022 – Mar 2023",
-      "id": "aes",
-      "location": "San Jose, CA",
-      "subtitle": "Clients: Meta (Facebook) & Applied Materials",
-      "title": "Engineering Manager"
-    },
-    {
-      "company": "Design Visionaries",
-      "dates": "Mar 2023 – Present",
-      "id": "design-visionaries",
-      "location": "San Jose, CA",
-      "subtitle": "Clients: Applied Materials, Saildrone, Industrial IoT",
-      "title": "Mechatronics Engineer"
-    },
-    {
-      "company": "Monogram Orthopedics (ARI)",
-      "dates": "Jan 2020 – Dec 2020",
-      "id": "monogram",
-      "location": "Austin, TX",
-      "subtitle": null,
-      "title": "Robotics Software Engineer"
-    },
-    {
-      "company": "Velodyne Lidar",
-      "dates": "Jan 2021 – Sep 2022",
-      "id": "velodyne",
-      "location": "San Jose, CA",
-      "subtitle": "R&D Software Team Lead",
-      "title": "Senior Robotics Engineer"
-    }
-  ],
-  "name": "Shivam Bhardwaj",
   "skills": {
     "AI & Robotics": "C++, Rust, Python, ROS/ROS2, LLM Integration, CV (OpenCV, YOLO)",
-    "Automation": "Industrial IoT, PLC (Beckhoff), LabView, Sensor Fusion",
     "Hardware/CAD": "Siemens NX (Open API), SolidWorks, Rhino3D, GD&T, Prototyping",
+    "Automation": "Industrial IoT, PLC (Beckhoff), LabView, Sensor Fusion",
     "Process/Tools": "5S Methodology, ERP Integration, Git, Jira, Wiring/Harnessing"
-  }
+  },
+  "experience": [
+    {
+      "id": "design-visionaries",
+      "title": "Mechatronics Engineer",
+      "company": "Design Visionaries",
+      "location": "San Jose, CA",
+      "dates": "May 2023 – Present",
+      "subtitle": "Clients: Applied Materials, Saildrone, Industrial IoT",
+      "bullets": [
+        {
+          "id": "bullet-1",
+          "text": "**AutoCrate Design Engine:** Invented a parametric design engine by reverse-engineering **Siemens NX Expressions** (bypassing slow NX Open API), reducing design time from **5 days to <1 hour**. Built a **React/Python** GUI to generate ASTM-compliant drawings, increasing custom crate adoption from **20% to 50%**."
+        },
+        {
+          "id": "bullet-2",
+          "text": "**AR Glasses Electronics:** Designed a **10-layer Flex PCB** for AR glasses, integrating an **Ambiq MCU**, USB power delivery, micro-projector data path, and **I2C** ambient light sensing within a compact form factor."
+        },
+        {
+          "id": "bullet-3",
+          "text": "**Harness Production Scaling:** Scaled harness production from **25 to 70 units/day** (2.8x increase) and reduced RMA rate from **70% to 10%** by implementing lean manufacturing systems and optimizing assembly workflows."
+        },
+        {
+          "id": "bullet-4",
+          "text": "**Custom Instrumentation:** Invented a real-time **Laser/LDR** soil leveling sensor for slurry injection, solving a critical feedback gap where CV failed. Developed an automated metrology machine for recycled metal classification."
+        },
+        {
+          "id": "bullet-5",
+          "text": "**MBD & GD&T:** Transitioned a major semiconductor lab (Plasma ALD) from 2D drawings to **Model-Based Definition (MBD)** in NX, defining **GD&T** and PMI directly in 3D models to meet critical deadlines."
+        }
+      ]
+    },
+    {
+      "id": "aes",
+      "title": "Engineering Manager",
+      "company": "Advanced Engineering Services",
+      "location": "San Jose, CA",
+      "dates": "Oct 2022 – Apr 2023",
+      "subtitle": "Clients: Meta (Reality Labs), Applied Materials, Hummingbird EV, AAA",
+      "bullets": [
+        {
+          "id": "bullet-1",
+          "text": "**Multi-Modal Robotic Forensics:** Architected a robotic workcell for counterfeit detection in server systems, integrating **RF, Thermal (+/- 0.5°C), Capacitance, and Optical** (85mm industrial lens) sensing to achieve **0.5% repeatability**."
+        },
+        {
+          "id": "bullet-2",
+          "text": "**EV Conversion & Simulation:** Led the mechanical reverse-engineering for a **Class-8 Diesel-to-Electric** conversion (AAA); executed **3D scan post-processing** and **Harmonic Analysis** to validate structural integrity and transient response of mounting systems."
+        },
+        {
+          "id": "bullet-3",
+          "text": "**AR Hardware Development:** Managed the mechanical and industrial design of a **Waveguide Frame** for a semiconductor research lab; coordinated with vendors for high-fidelity finishing (painting/3D printing) to meet **tight tolerance specifications** for executive demos."
+        },
+        {
+          "id": "bullet-4",
+          "text": "**Feasibility & Automation:** Conducted feasibility studies for **containerized ad-hoc EV charging** and **datacenter server pin testing automation**, delivering technical roadmaps for niche industrial problems."
+        }
+      ]
+    },
+    {
+      "id": "velodyne",
+      "title": "Senior Robotics Engineer",
+      "company": "Velodyne Lidar",
+      "location": "San Jose, CA",
+      "dates": "Jan 2021 – Sep 2022",
+      "subtitle": "R&D Software Team Lead",
+      "bullets": [
+        {
+          "id": "bullet-1",
+          "text": "**Next-Gen Lidar Validation:** Validated next-generation LiDARs (including **Velarray directional** sensors) at highway cruising speeds. Engineered custom 80-20 testing jigs for diverse platforms, ensuring robust data collection for **all product lines**."
+        },
+        {
+          "id": "bullet-2",
+          "text": "**Infrastructure Automation (SaaS Deployment):** Pioneered the deployment strategy for Velodyne's **first-ever SaaS compute stack**. Developed **Ansible** playbooks to automate the provisioning of the **Vella vision stack** on **Jetson-based NRU** controllers, enabling scalable customer deployments."
+        },
+        {
+          "id": "bullet-3",
+          "text": "**Sensor Integration & Development:** Developed onboard IMU capabilities and implemented Precision Time Protocol (PTP) synchronization. Built data collection platforms integrating RTK GPS for high-fidelity georeferencing."
+        },
+        {
+          "id": "bullet-4",
+          "text": "**Field Engineering & Operations:** Led **7+ standardized IEAB tests** at GoMentum Station. Generated massive data annotation pipelines for **Scale AI**, supporting the training of perception models across the entire product line."
+        },
+        {
+          "id": "bullet-5",
+          "text": "**Strategic Technical Partnerships:** Acted as a **Hardware-Software Liaison** for key accounts (**Ford, Amazon Scout, Knightscope**). For **Bluecity** (Smart Cities), conducted **3D blindspot analysis** to optimize Lidar placement and maximize coverage efficiency."
+        }
+      ]
+    },
+    {
+      "id": "ari",
+      "title": "Robotics Software Engineer",
+      "company": "ARI",
+      "location": "Austin, TX",
+      "dates": "Jan 2020 – Dec 2020",
+      "subtitle": "Surgical Robotics & Compliance",
+      "bullets": [
+        {
+          "id": "bullet-1",
+          "text": "**Surgical Registration Algorithm:** Developed a **C++** registration algorithm using **VTK** and **PCL**, processing **10,000+ points** to compute the transformation matrix between a patient's femur and a surgical drill. Implemented **Iterative Closest Point (ICP)** to align **OptiTrack** motion capture data with MRI-based 3D point clouds."
+        },
+        {
+          "id": "bullet-2",
+          "text": "**High-Performance Metrics:** Achieved **0.1mm translation** and **0.3° rotation accuracy** with a registration time of **300ms** (data collection: 20s), directly enabling precise robotic milling of the femur head."
+        },
+        {
+          "id": "bullet-3",
+          "text": "**Robot Control System:** Engineered the control logic for a **6-DOF Kuka Robot** using **Beckhoff PLC**, orchestrating **100%** of the surgical workflow from registration to execution with **1ms** cycle times."
+        },
+        {
+          "id": "bullet-4",
+          "text": "**FDA Compliance:** Performed system-level risk analysis and contributed to design validation documentation for **FDA 510(k)** submission, ensuring **100%** safety-critical software compliance under **IEC 62304** standards."
+        },
+        {
+          "id": "bullet-5",
+          "text": "**Data Pipeline Architecture:** Implemented **DDS** middleware and **Protobuf** serialization to process and feed real-time sensor data into the **Computer Vision (CV)** pipeline with **<5ms latency**, ensuring seamless integration between subsystems."
+        },
+        {
+          "id": "bullet-6",
+          "text": "**Industry Impact:** Pioneered **\"Active Milling\"** (autonomous cutting), moving beyond standard \"jig-holding\" robotics. This key innovation drove **Zimmer Biomet’s acquisition of Monogram** in late 2025 to challenge industry leaders."
+        }
+      ]
+    },
+    {
+      "id": "ai4ce",
+      "title": "Visiting Researcher",
+      "company": "AI4CE Lab (NYU)",
+      "location": "New York, NY",
+      "dates": "Jun 2019 – Dec 2019",
+      "subtitle": "Advisor: Prof. Chen Feng",
+      "bullets": [
+        {
+          "id": "bullet-1",
+          "text": "**Autonomous Construction:** Researched **Collective Robotic Construction (CRC)**, developing algorithms for multi-agent systems to build structures autonomously."
+        },
+        {
+          "id": "bullet-2",
+          "text": "**Computer Vision:** Implemented **SLAM** and object detection pipelines for real-time site monitoring and robot localization in dynamic environments."
+        },
+        {
+          "id": "bullet-3",
+          "text": "**Research Publication:** Contributed to research findings on **topological structural analysis** for robotic assembly, laying groundwork for future lab publications."
+        }
+      ]
+    },
+    {
+      "id": "nyu-graduate",
+      "title": "Graduate Research Assistant",
+      "company": "NYU Tandon School of Engineering",
+      "location": "New York, NY",
+      "dates": "Aug 2017 – May 2019",
+      "subtitle": "M.S. in Mechatronics & Robotics",
+      "bullets": [
+        {
+          "id": "bullet-1",
+          "text": "**Mechatronics Systems:** Designed and fabricated a **Miniature Wall-Climbing Robot** using magnetic adhesion and compliant locomotion, achieving vertical traversal speeds of 5cm/s."
+        },
+        {
+          "id": "bullet-2",
+          "text": "**Embedded Control:** Developed real-time control firmware on **STM32** microcontrollers for multi-DOF robotic arms, implementing PID control for precise trajectory tracking."
+        },
+        {
+          "id": "bullet-3",
+          "text": "**Teaching Assistant:** Mentored 30+ students in \"Introduction to Robotics,\" leading lab sessions on **ROS**, python scripting, and sensor integration."
+        }
+      ]
+    }
+  ]
 }

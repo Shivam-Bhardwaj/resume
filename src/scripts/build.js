@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
 
+const { marked } = require('marked');
+
 // Project root (two levels up from src/scripts/)
 const ROOT = path.join(__dirname, '..', '..');
 const SRC = path.join(ROOT, 'src');
@@ -20,6 +22,11 @@ const template = Handlebars.compile(templateSource);
 Handlebars.registerHelper('splitByComma', function (string) {
   if (!string) return [];
   return string.split(',').map(s => s.trim());
+});
+
+Handlebars.registerHelper('md', function (string) {
+  if (!string) return '';
+  return marked.parse(string);
 });
 
 // Helper to determine which configs to build

@@ -1,0 +1,7 @@
+About the job
+Role: Senior Rust Developer
+Company: RustFoundation
+Description: We need a developer who loves Rust and specific tools like Actix, Tokio, and Wasm.
+Responsibilities:
+- Write safe code.
+- Deploy to Kubernetes.
