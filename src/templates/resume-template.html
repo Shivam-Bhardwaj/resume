@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
 
         @page {
-            margin: 0.4in 0.5in;
+            margin: {{#if layout.pageMargin}}{{layout.pageMargin}}{{else}}0.4in 0.5in{{/if}};
             size: letter;
         }
 
@@ -27,16 +27,22 @@
             /* Slate 500 */
             --border-color: #e2e8f0;
             /* Slate 200 */
+
+            /* Layout knobs (bounded tweaks for fit-to-pages) */
+            --base-font-size: {{#if layout.baseFontSize}}{{layout.baseFontSize}}{{else}}9pt{{/if}};
+            --base-line-height: {{#if layout.lineHeight}}{{layout.lineHeight}}{{else}}1.25{{/if}};
+            --container-gap: {{#if layout.containerGap}}{{layout.containerGap}}{{else}}5px{{/if}};
+            --job-gap: {{#if layout.jobGap}}{{layout.jobGap}}{{else}}5px{{/if}};
         }
 
         body {
             font-family: 'Inter', sans-serif;
             color: var(--text-main);
-            line-height: 1.25;
+            line-height: var(--base-line-height);
             /* Aggressive reduction */
             margin: 0;
             padding: 0;
-            font-size: 9pt;
+            font-size: var(--base-font-size);
             background-color: #fff;
             -webkit-font-smoothing: antialiased;
         }
@@ -48,13 +54,13 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: var(--container-gap);
             /* Minimal gap */
         }
 
         /* HEADER */
         .header-section {
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 4px;
             margin-bottom: 2px;
             text-align: center;
@@ -82,9 +88,15 @@
 
         .contact-info-header {
             font-size: 8.5pt;
-            /* Reduced */
             color: var(--text-main);
-            margin-top: 2px;
+            margin-top: 1px;
+            line-height: 1.4;
+        }
+
+        .separator {
+            margin: 0 4px;
+            color: var(--accent-color);
+            opacity: 0.6;
         }
 
         .contact-info-header a {
@@ -95,7 +107,7 @@
         /* SUMMARY */
         .summary {
             text-align: justify;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
         /* SECTIONS */
@@ -105,37 +117,80 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--primary-color);
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 1px;
             margin-bottom: 2px;
         }
 
-        /* Skills Inline */
+        /* Subtle accent rule to reduce perceived whitespace and improve scanning */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 44px;
+            height: 2px;
+            background: var(--accent-color);
+            margin-top: 1px;
+            border-radius: 2px;
+            opacity: 0.85;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: max-content 1fr max-content 1fr;
+            row-gap: 4px;
+            align-items: baseline;
+        }
+
         .skill-row {
-            margin-bottom: 1px;
-            font-size: 9pt;
+            display: contents;
+        }
+
+        /* Add spacing between the two main columns */
+        .skill-row:nth-child(odd) .skill-list {
+            margin-right: 20px;
         }
 
         .skill-cat-name {
             font-weight: 700;
             color: var(--primary-color);
-            margin-right: 5px;
+            margin-right: 6px;
+            white-space: nowrap;
         }
 
         .skill-list {
             color: var(--text-main);
+            line-height: 1.2;
         }
 
         /* Job Header */
         .job {
-            margin-bottom: 5px;
+            margin-bottom: var(--job-gap);
             /* Minimal margin */
+        }
+
+        /* Force Velodyne role header to appear on page 2 (prevents orphaned bullets without context) */
+        .job[data-job-id="velodyne"] {
+            break-before: page;
+            page-break-before: always;
         }
 
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+        }
+
+        /* Prevent orphaned job headers at the bottom of a page */
+        .job-header,
+        .job-subtitle {
+            break-after: avoid-page;
+            page-break-after: avoid;
+        }
+
+        .job ul {
+            break-before: avoid-page;
+            page-break-before: avoid;
         }
 
         .job-title {
@@ -147,6 +202,12 @@
         .job-company {
             font-weight: 600;
             color: var(--text-main);
+        }
+
+        .job-location {
+            font-weight: 500;
+            color: var(--text-light);
+            font-size: 9pt;
         }
 
         .job-dates {
@@ -170,14 +231,24 @@
         .job li {
             margin-bottom: 0px;
             /* No margin between items */
-            font-size: 9pt;
+            font-size: inherit;
             color: var(--text-main);
             text-align: justify;
+        }
+
+        /* Marked wraps list-item text in <p> tags; remove default spacing */
+        .job li p {
+            margin: 0;
         }
 
         .job li::marker {
             color: var(--accent-color);
             font-size: 0.8em;
+        }
+
+        /* Fit-to-pages support: optional bullets start hidden and may be enabled by the PDF fitter */
+        .fit-optional {
+            display: none;
         }
 
         /* Education */
@@ -222,16 +293,27 @@
             <h1>{{name}}</h1>
             <div class="tagline">{{tagline}}</div>
 
-            <!-- Contact Info (Moved from sidebar) -->
+            <!-- Contact Info (Split into two rows for better spacing) -->
             <div class="contact-info-header">
-                <span>{{contact.location}}</span> |
-                <span><a href="tel:{{contact.phone}}">{{contact.phone}}</a></span> |
-                <span><a href="mailto:{{contact.email}}">{{contact.email}}</a></span> |
-                <span><a href="{{contact.website}}">Website</a></span> |
-                <span><a href="{{contact.linkedin}}">LinkedIn</a></span> |
+                <span>{{contact.location}}</span>
+                <span class="separator">|</span>
+                <span><a href="tel:{{contact.phone}}">{{contact.phone}}</a></span>
+                <span class="separator">|</span>
+                <span><a href="mailto:{{contact.email}}">{{contact.email}}</a></span>
+            </div>
+            <div class="contact-info-header">
+                <span><a href="{{contact.website}}">shivambhardwaj.com</a></span>
+                <span class="separator">|</span>
+                <span><a href="{{contact.linkedin}}">LinkedIn</a></span>
+                <span class="separator">|</span>
                 <span><a href="{{contact.github}}">GitHub</a></span>
+                {{#if contact.resumeSource}}
+                <span class="separator">|</span>
+                <span><a href="{{contact.resumeSource}}">Resume Source Code</a></span>
+                {{/if}}
                 {{#if showVisaBadge}}
-                | <span class="visa-badge">{{visaBadgeText}}</span>
+                <span class="separator">|</span>
+                <span class="visa-badge">{{visaBadgeText}}</span>
                 {{/if}}
             </div>
         </header>
@@ -241,26 +323,27 @@
         <div class="section">
             <div class="section-title">Professional Summary</div>
             <div class="summary">
-                {{{summary}}}
+                {{{md summary}}}
             </div>
         </div>
         {{/if}}
 
-        <!-- SKILLS / EXPERTISE (Moved from sidebar) -->
+        <!-- SKILLS / EXPERTISE -->
         {{#if sections.skills}}
         <div class="section">
             <div class="section-title">Expertise</div>
-
-            {{#each skills}}
-            <div class="skill-row">
-                <span class="skill-cat-name">{{@key}}:</span>
-                <span class="skill-list">
-                    {{#each (splitByComma this)}}
-                    <span class="skill-item">{{this}}</span>{{#unless @last}}, {{/unless}}
-                    {{/each}}
-                </span>
+            <div class="skills-grid">
+                {{#each skills}}
+                <div class="skill-row">
+                    <span class="skill-cat-name">{{@key}}:</span>
+                    <span class="skill-list">
+                        {{#each this}}
+                        <span class="skill-item">{{this}}</span>{{#unless @last}}, {{/unless}}
+                        {{/each}}
+                    </span>
+                </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
         {{/if}}
 
@@ -269,11 +352,11 @@
         <div class="section">
             <div class="section-title">Experience</div>
             {{#each experience}}
-            <div class="job">
+            <div class="job" data-job-id="{{id}}">
                 <div class="job-header">
                     <div>
                         <span class="job-title">{{title}}</span>
-                        <span class="job-company"> | {{company}}</span>
+                        <span class="job-company"> | {{company}}</span>{{#if location}}<span class="job-location"> — {{location}}</span>{{/if}}
                     </div>
                     <span class="job-dates">{{dates}}</span>
                 </div>
@@ -282,7 +365,7 @@
                 {{/if}}
                 <ul>
                     {{#each bullets}}
-                    <li>{{{md text}}}</li>
+                    <li data-job-id="{{../id}}" data-bullet-id="{{id}}" data-fit-rank="{{fit_rank}}" data-fit-score="{{fit_score}}" class="{{#if fit_optional}}fit-optional{{/if}}">{{{md text}}}</li>
                     {{/each}}
                 </ul>
             </div>

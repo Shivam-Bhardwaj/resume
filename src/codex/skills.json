@@ -1,6 +1,36 @@
 {
-    "AI & Robotics": "C++, Rust, Python, ROS/ROS2, LLM Integration, CV (OpenCV, YOLO)",
-    "Hardware/CAD": "Siemens NX (Open API), SolidWorks, Rhino3D, GD&T, Prototyping",
-    "Automation": "Industrial IoT, PLC (Beckhoff), LabView, Sensor Fusion",
-    "Process/Tools": "5S Methodology, ERP Integration, Git, Jira, Wiring/Harnessing"
+    "Robotics & AI": [
+        "ROS/ROS2 (Nav2, MoveIt)",
+        "C++ (14/17)",
+        "Python (AsyncIO)",
+        "SLAM (GMapping, Cartographer)",
+        "Computer Vision (OpenCV, YOLO)",
+        "Sensor Fusion (Kalman Filters)",
+        "LLM Agents (LangChain)"
+    ],
+    "Hardware & CAD": [
+        "Siemens NX (Open API)",
+        "SolidWorks",
+        "Rhino3D",
+        "GD&T (ASME Y14.5)",
+        "DFMA",
+        "Rapid Prototyping",
+        "3D Printing"
+    ],
+    "Embedded & EE": [
+        "Embedded C",
+        "Rust (Embedded Hal)",
+        "PCB Design (Altium/KiCad)",
+        "Microcontrollers (STM32, ESP32, Ambiq)",
+        "Industrial Protocols (EtherCAT, Modbus)",
+    "Interfaces (I2C, UART, CAN), PoE"
+    ],
+    "Software & DevOps": [
+        "Rust (Tokio, Axum)",
+        "Docker/Kubernetes",
+        "CI/CD (GitHub Actions)",
+        "Linux/Bash",
+        "AWS (IoT Core)",
+        "React/Next.js"
+    ]
 }

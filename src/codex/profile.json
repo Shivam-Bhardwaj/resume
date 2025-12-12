@@ -7,6 +7,7 @@
         "website": "https://shivambhardwaj.com",
         "linkedin": "https://linkedin.com/in/shivambdj",
         "github": "https://github.com/shivam-bhardwaj",
+        "resumeSource": "https://github.com/Shivam-Bhardwaj/resume",
         "twitter": "https://x.com/LazyShivam"
     },
     "education": [
@@ -14,13 +15,13 @@
             "id": "nyu",
             "degree": "M.S. Mechatronics & Robotics",
             "school": "New York University",
-            "detail": "Research: AI4CE Lab – Real-time visual localization using Deep Learning (SLAM without GPS)"
+            "detail": "Research: COLMAP-based visual relocalization; swarm robotics"
         },
         {
             "id": "ipu",
             "degree": "B.Tech Electronics",
             "school": "I.P. University, Delhi",
-            "detail": "Award: Top 3 University Projects – Developed ArduPilot-based Autonomous Drone"
+            "detail": "Award: Top-3 Projects; built ArduPilot autonomous drone"
         }
     ]
 }

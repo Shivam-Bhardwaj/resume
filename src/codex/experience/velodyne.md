@@ -2,7 +2,7 @@
 id: velodyne
 title: Senior Robotics Engineer
 company: Velodyne Lidar
-location: San Jose, CA
+location: Alameda, CA
 dates: Jan 2021 – Sep 2022
 subtitle: "R&D Software Team Lead"
 ---

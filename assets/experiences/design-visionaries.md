@@ -3,7 +3,7 @@ id: design-visionaries
 title: Mechatronics Engineer
 company: Design Visionaries
 location: San Jose, CA
-dates: May 2023 – Present
+dates: May 2023 – Dec 2025
 subtitle: "Clients: Applied Materials, Saildrone, Industrial IoT"
 ---
 

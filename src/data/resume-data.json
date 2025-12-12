@@ -7,27 +7,63 @@
     "website": "https://shivambhardwaj.com",
     "linkedin": "https://linkedin.com/in/shivambdj",
     "github": "https://github.com/shivam-bhardwaj",
+    "resumeSource": "https://github.com/Shivam-Bhardwaj/resume",
     "twitter": "https://x.com/LazyShivam"
+  },
+  "summaries": {
+    "founder": "**Visionary Engineer & Founder** with 6+ years architecting zero-to-one automation for **Meta, Applied Materials, and Saildrone**. Specialist in collapsing development cycles (100x speedups) via custom **AI-driven CAD & Manufacturing engines**. Now building the next generation of **autonomous industrial robotics**.",
+    "recruiter": "Senior Robotics & Automation Engineer with 6+ years shipping embedded and mechatronic systems across **C++/Rust**, **Linux/ROS2**, motion control, and hardware integration. Collaborative, cross-functional executor delivering safety-critical support across self-driving systems, robotic forensics, datacenter automation, AR hardware, harness production, and semiconductor equipment; supported **Meta, Tesla, Apple, Applied Materials, Amazon Robotics, and Saildrone**.",
+    "tailored": "Embedded robotics engineer with 6+ years building production-grade systems across **C++/CMake**, **Linux**, and real-time control. Shipped surgical robotics software spanning motor/I-O interaction, **PID** control, and motion planning workflows; experienced with rigorous testing, root-cause analysis, and design documentation."
   },
   "education": [
     {
       "id": "nyu",
       "degree": "M.S. Mechatronics & Robotics",
       "school": "New York University",
-      "detail": "Research: AI4CE Lab – Real-time visual localization using Deep Learning (SLAM without GPS)"
+      "detail": "Research: COLMAP-based visual relocalization; swarm robotics"
     },
     {
       "id": "ipu",
       "degree": "B.Tech Electronics",
       "school": "I.P. University, Delhi",
-      "detail": "Award: Top 3 University Projects – Developed ArduPilot-based Autonomous Drone"
+      "detail": "Award: Top-3 Projects; built ArduPilot autonomous drone"
     }
   ],
   "skills": {
-    "AI & Robotics": "C++, Rust, Python, ROS/ROS2, LLM Integration, CV (OpenCV, YOLO)",
-    "Hardware/CAD": "Siemens NX (Open API), SolidWorks, Rhino3D, GD&T, Prototyping",
-    "Automation": "Industrial IoT, PLC (Beckhoff), LabView, Sensor Fusion",
-    "Process/Tools": "5S Methodology, ERP Integration, Git, Jira, Wiring/Harnessing"
+    "Robotics & AI": [
+      "ROS/ROS2 (Nav2, MoveIt)",
+      "C++ (14/17)",
+      "Python (AsyncIO)",
+      "SLAM (GMapping, Cartographer)",
+      "Computer Vision (OpenCV, YOLO)",
+      "Sensor Fusion (Kalman Filters)",
+      "LLM Agents (LangChain)"
+    ],
+    "Hardware & CAD": [
+      "Siemens NX (Open API)",
+      "SolidWorks",
+      "Rhino3D",
+      "GD&T (ASME Y14.5)",
+      "DFMA",
+      "Rapid Prototyping",
+      "3D Printing"
+    ],
+    "Embedded & EE": [
+      "Embedded C",
+      "Rust (Embedded Hal)",
+      "PCB Design (Altium/KiCad)",
+      "Microcontrollers (STM32, ESP32, Ambiq)",
+      "Industrial Protocols (EtherCAT, Modbus)",
+      "Interfaces (I2C, UART, CAN), PoE"
+    ],
+    "Software & DevOps": [
+      "Rust (Tokio, Axum)",
+      "Docker/Kubernetes",
+      "CI/CD (GitHub Actions)",
+      "Linux/Bash",
+      "AWS (IoT Core)",
+      "React/Next.js"
+    ]
   },
   "experience": [
     {
@@ -35,7 +71,7 @@
       "title": "Mechatronics Engineer",
       "company": "Design Visionaries",
       "location": "San Jose, CA",
-      "dates": "May 2023 – Present",
+      "dates": "May 2023 – Dec 2025",
       "subtitle": "Clients: Applied Materials, Saildrone, Industrial IoT",
       "bullets": [
         {
@@ -90,7 +126,7 @@
       "id": "velodyne",
       "title": "Senior Robotics Engineer",
       "company": "Velodyne Lidar",
-      "location": "San Jose, CA",
+      "location": "Alameda, CA",
       "dates": "Jan 2021 – Sep 2022",
       "subtitle": "R&D Software Team Lead",
       "bullets": [
@@ -120,7 +156,7 @@
       "id": "ari",
       "title": "Robotics Software Engineer",
       "company": "ARI",
-      "location": "Austin, TX",
+      "location": "Sunnyvale, CA",
       "dates": "Jan 2020 – Dec 2020",
       "subtitle": "Surgical Robotics & Compliance",
       "bullets": [
@@ -146,7 +182,7 @@
         },
         {
           "id": "bullet-6",
-          "text": "**Industry Impact:** Pioneered **\"Active Milling\"** (autonomous cutting), moving beyond standard \"jig-holding\" robotics. This key innovation drove **Zimmer Biomet’s acquisition of Monogram** in late 2025 to challenge industry leaders."
+          "text": "**Industry Impact:** Pioneered **\"Active Milling\"** (autonomous cutting), moving beyond standard \"jig-holding\" robotics. This innovation drove **Zimmer Biomet’s acquisition of Monogram** in 2025."
         }
       ]
     },
@@ -154,43 +190,43 @@
       "id": "ai4ce",
       "title": "Visiting Researcher",
       "company": "AI4CE Lab (NYU)",
-      "location": "New York, NY",
+      "location": "Brooklyn, NY",
       "dates": "Jun 2019 – Dec 2019",
       "subtitle": "Advisor: Prof. Chen Feng",
       "bullets": [
         {
           "id": "bullet-1",
-          "text": "**Autonomous Construction:** Researched **Collective Robotic Construction (CRC)**, developing algorithms for multi-agent systems to build structures autonomously."
+          "text": "**GPS-Denied Visual Localization:** Built an end-to-end pipeline (video → frame extraction → blur filtering → **COLMAP** 3D reconstruction) to recover **6-DoF** camera pose vectors in urban environments."
         },
         {
           "id": "bullet-2",
-          "text": "**Computer Vision:** Implemented **SLAM** and object detection pipelines for real-time site monitoring and robot localization in dynamic environments."
+          "text": "**Single-Image Relocalization (Transfer Learning):** Fine-tuned a pre-trained neural network to predict position + orientation from a single photo, achieving ~**10 cm** relocalization accuracy and ~**8 deg** orientation error on a typical Brooklyn block (**demo available**)."
         },
         {
           "id": "bullet-3",
-          "text": "**Research Publication:** Contributed to research findings on **topological structural analysis** for robotic assembly, laying groundwork for future lab publications."
+          "text": "**Experimental Rigor:** Automated dataset generation, reconstruction runs, and evaluation loops on **Linux**, enabling repeatable comparisons of frame filtering and model variants."
         }
       ]
     },
     {
       "id": "nyu-graduate",
-      "title": "Graduate Research Assistant",
+      "title": "Graduate Leadership & Research",
       "company": "NYU Tandon School of Engineering",
-      "location": "New York, NY",
+      "location": "Brooklyn, NY",
       "dates": "Aug 2017 – May 2019",
       "subtitle": "M.S. in Mechatronics & Robotics",
       "bullets": [
         {
           "id": "bullet-1",
-          "text": "**Mechatronics Systems:** Designed and fabricated a **Miniature Wall-Climbing Robot** using magnetic adhesion and compliant locomotion, achieving vertical traversal speeds of 5cm/s."
+          "text": "**Makerspace Operations (Manager):** Operated and maintained fabrication equipment (**3D printing, laser cutting, CNC routing, waterjet, electronics lab**) and coached **50–150** student project teams on safe prototyping and iteration."
         },
         {
           "id": "bullet-2",
-          "text": "**Embedded Control:** Developed real-time control firmware on **STM32** microcontrollers for multi-DOF robotic arms, implementing PID control for precise trajectory tracking."
+          "text": "**Self-Driving VIP (Founder/Lead):** Secured dean funding and converted the team into a **Vertically Integrated Project (VIP)**; led a ~**12**-person team to place **1st** in Novel Design and **3rd** overall execution at the **26th** IGVC."
         },
         {
           "id": "bullet-3",
-          "text": "**Teaching Assistant:** Mentored 30+ students in \"Introduction to Robotics,\" leading lab sessions on **ROS**, python scripting, and sensor integration."
+          "text": "**Autonomy Stack (IGVC):** Led integration of sensors + compute and guided development of **ROS-based** navigation, including motion planning (e.g., RRT, RRT\\*, A\\*) and **PID** control for an autonomous ground vehicle."
         }
       ]
     }

@@ -1,0 +1,1 @@
+**Visionary Engineer & Founder** with 6+ years architecting zero-to-one automation for **Meta, Applied Materials, and Saildrone**. Specialist in collapsing development cycles (100x speedups) via custom **AI-driven CAD & Manufacturing engines**. Now building the next generation of **autonomous industrial robotics**.

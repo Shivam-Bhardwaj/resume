@@ -15,14 +15,9 @@
     "design-visionaries",
     "aes",
     "velodyne",
-    "monogram"
+    "ari"
   ],
-  "skillsOrder": [
-    "AI & Robotics",
-    "Hardware/CAD",
-    "Automation",
-    "Process/Tools"
-  ],
+  "skillsOrder": ["Robotics & AI", "Hardware & CAD", "Embedded & EE", "Software & DevOps"],
   "experienceOverrides": {
     "design-visionaries": {
       "title": "Founder & Lead Engineer",

@@ -6,3 +6,8 @@ dist/
 # Optional: Ignore generated PDFs if you don't want them in history
 # *.pdf
 snapshots/
+
+# Tailoring artifacts (generated)
+src/data/config-tailored.json
+src/codex/summaries/tailored.md
+Shivam_Bhardwaj_Resume_Tailored.pdf

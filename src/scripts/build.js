@@ -50,6 +50,21 @@ function applyOverrides(experience, overrides) {
   });
 }
 
+// Apply skill overrides from config (replace whole categories; null deletes category)
+function applySkillOverrides(skills, overrides) {
+  if (!overrides) return skills;
+  const out = { ...skills };
+
+  for (const [key, value] of Object.entries(overrides)) {
+    if (value === null) {
+      delete out[key];
+    } else {
+      out[key] = value;
+    }
+  }
+  return out;
+}
+
 // Order skills according to config
 function orderSkills(skills, order) {
   if (!order) return skills;
@@ -61,6 +76,19 @@ function orderSkills(skills, order) {
     }
   });
   return orderedSkills;
+}
+
+// Order + filter experience according to config.experienceOrder
+function orderExperience(experience, order) {
+  if (!order || order.length === 0) return experience;
+
+  const byId = new Map(experience.map(job => [job.id, job]));
+  const missing = order.filter(id => !byId.has(id));
+  if (missing.length > 0) {
+    console.warn(`Warning: experienceOrder contains unknown ids: ${missing.join(', ')}`);
+  }
+
+  return order.map(id => byId.get(id)).filter(Boolean);
 }
 
 // Merge contact overrides with base contact data
@@ -82,13 +110,24 @@ function buildVersion(configName) {
 
   const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
+  const skills = orderSkills(
+    applySkillOverrides(resumeData.skills, config.skillsOverrides),
+    config.skillsOrder
+  );
+
+  const experience = orderExperience(
+    applyOverrides(resumeData.experience, config.experienceOverrides),
+    config.experienceOrder
+  );
+
   // Merge data with config
   const context = {
     ...resumeData,
     ...config,
+    summary: resumeData.summaries[configName] || config.summary, // Prefer markdown file, fallback to config
     contact: mergeContact(resumeData.contact, config.contactOverrides),
-    skills: orderSkills(resumeData.skills, config.skillsOrder),
-    experience: applyOverrides(resumeData.experience, config.experienceOverrides)
+    skills,
+    experience
   };
 
   // Render template

@@ -2,7 +2,7 @@
 id: ari
 title: Robotics Software Engineer
 company: ARI
-location: Austin, TX
+location: Sunnyvale, CA
 dates: Jan 2020 – Dec 2020
 subtitle: "Surgical Robotics & Compliance"
 ---
@@ -13,7 +13,7 @@ subtitle: "Surgical Robotics & Compliance"
 - **Robot Control System:** Engineered the control logic for a **6-DOF Kuka Robot** using **Beckhoff PLC**, orchestrating **100%** of the surgical workflow from registration to execution with **1ms** cycle times.
 - **FDA Compliance:** Performed system-level risk analysis and contributed to design validation documentation for **FDA 510(k)** submission, ensuring **100%** safety-critical software compliance under **IEC 62304** standards.
 - **Data Pipeline Architecture:** Implemented **DDS** middleware and **Protobuf** serialization to process and feed real-time sensor data into the **Computer Vision (CV)** pipeline with **<5ms latency**, ensuring seamless integration between subsystems.
-- **Industry Impact:** Pioneered **"Active Milling"** (autonomous cutting), moving beyond standard "jig-holding" robotics. This key innovation drove **Zimmer Biomet’s acquisition of Monogram** in late 2025 to challenge industry leaders.
+- **Industry Impact:** Pioneered **"Active Milling"** (autonomous cutting), moving beyond standard "jig-holding" robotics. This innovation drove **Zimmer Biomet’s acquisition of Monogram** in 2025.
 
 ## Raw Input
 I worked on the core surgical navigation system for Monogram (formerly ARI) with Kamran Shamaei (CTO). My primary responsibility was writing the registration algorithm in C++. The system took input from an OptiTrack wand (collecting points on the bone) and a 3D reconstructed model of the femur head from an MRI (provided as a PCL). I used the VTK library to handle the data and implemented the ICP (Iterative Closest Point) algorithm to find the transformation matrix between the bone and a stationary drill. We achieved impressive metrics: 0.1mm translational accuracy and 0.3-degree rotational accuracy. The process was fast, with data collection taking 20 seconds and registration completing in just 300ms. I also architected the data pipeline using DDS and Protobuf, converting sensor data to feed into the CV algorithms. After registration, I was responsible for controlling the Kuka robot using PLC logic on a Beckhoff PLC to manage the system's operation. **Impact:** We pioneered CV and active robotic surgery ("Active Milling"), moving beyond the "Holding the Jig" approach (like ROSA). This technology was the key driver for Zimmer Biomet's acquisition of Monogram in late 2025, signaling a major shift in the industry to directly challenge Stryker.

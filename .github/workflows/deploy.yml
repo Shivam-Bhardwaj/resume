@@ -21,9 +21,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build HTML and Generate PDFs
         run: npm run build
@@ -32,7 +33,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add *.pdf dist/html/
+          git add *.pdf
           git commit -m "chore: auto-generate resume pdfs [skip ci]" || echo "No changes to commit"
           git push
 
@@ -42,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'dist/html'
 
       - name: Deploy to GitHub Pages
         id: deployment

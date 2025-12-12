@@ -17,7 +17,20 @@ function runBuild() {
     const skillsPath = path.join(CODEX_DIR, 'skills.json');
     const skills = JSON.parse(fs.readFileSync(skillsPath, 'utf8'));
 
-    // 3. Load Experience
+    // 3. Load Summaries
+    const summariesDir = path.join(CODEX_DIR, 'summaries');
+    const summaries = {};
+    if (fs.existsSync(summariesDir)) {
+        const files = fs.readdirSync(summariesDir);
+        for (const file of files) {
+            if (path.extname(file) === '.md') {
+                const name = path.basename(file, '.md');
+                summaries[name] = fs.readFileSync(path.join(summariesDir, file), 'utf8').trim();
+            }
+        }
+    }
+
+    // 4. Load Experience
     const expDir = path.join(CODEX_DIR, 'experience');
     const experience = [];
 
@@ -43,6 +56,7 @@ function runBuild() {
     const output = {
         name: profile.name,
         contact: profile.contact,
+        summaries: summaries,
         education: profile.education,
         skills: skills,
         experience: experience

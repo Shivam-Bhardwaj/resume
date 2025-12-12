@@ -42,8 +42,12 @@ function checkBullet(bullet) {
     }
 
     // Check 2: Metrics (looks for numbers)
-    // Regex for numbers, %, $, currencies
-    const metricRegex = /(\d+%|\$\d+|\d+x|\d+ years|\d+ ms|\d+ sec|\d+ min|\d+ days|\d+ hr)/i;
+    // Regex for numbers/metrics:
+    // - Units (ms, mm, cm, deg, etc.)
+    // - Ordinals (1st/2nd/3rd/26th), ranges (50–150), counts (30+, 10,000+), and common robotics terms (6-DoF)
+    // - Symbols (<, >, ~) used in metrics
+    const metricRegex =
+        /(\d+%|\$\d+|\d+x|\d+ years|\d+ ?ms|\d+ ?s(ec)?|\d+ ?mm|\d+ ?cm|\d+ ?in|\d+ ?deg|\d+ ?min|\d+ ?days|\d+ ?hr|\b\d+(st|nd|rd|th)\b|\b\d+\s*[-–]\s*\d+\b|\b\d+\+|\b\d{1,3}(?:,\d{3})+\+?|\b\d+\s*[- ]?dof\b|#\d+|<|>|~)/i;
     if (!metricRegex.test(bullet)) {
         issues.push(`[NO_METRIC] Bullet lacks quantifiable impact: "${bullet.substring(0, 50)}..."`);
     }

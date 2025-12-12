@@ -4,13 +4,20 @@
   "tagline": "Senior AI-Augmented Robotics & Automation Engineer",
   "showVisaBadge": true,
   "visaBadgeText": "H-1B Transfer Ready",
-  "summary": "6+ years bridging <strong>Mechanical Design</strong> (Siemens NX), <strong>Software</strong> (Python/ROS/C++), and <strong>Operations</strong>. Specialist in <strong>AI-Accelerated Engineering</strong>—leveraging LLMs and modern AI stacks to rapidly deploy full-stack automation tools, reducing development cycles from weeks to days. Proven track record delivering critical hardware for <strong>Meta, Applied Materials, Amazon Robotics, and Saildrone</strong>.",
+  "summary": "Senior Robotics &amp; Automation Engineer with 6+ years shipping embedded and mechatronic systems across <strong>C++/Rust</strong>, <strong>Linux/ROS2</strong>, motion control, and hardware integration. Collaborative, cross-functional executor delivering safety-critical support across self-driving systems, robotic forensics, datacenter automation, AR hardware, harness production, and semiconductor equipment; supported <strong>Meta, Tesla, Apple, Applied Materials, Amazon Robotics, and Saildrone</strong>.",
   "sections": {
     "summary": true,
     "skills": true,
     "experience": true,
     "education": true
   },
-  "experienceOrder": ["design-visionaries", "aes", "velodyne", "monogram"],
-  "skillsOrder": ["AI & Robotics", "Hardware/CAD", "Automation", "Process/Tools"]
+  "layout": {
+    "pageMargin": "0.55in 0.50in 0.10in 0.50in",
+    "baseFontSize": "9.77pt",
+    "lineHeight": "1.36",
+    "containerGap": "5px",
+    "jobGap": "5px"
+  },
+  "experienceOrder": ["design-visionaries", "aes", "velodyne", "ari", "ai4ce", "nyu-graduate"],
+  "skillsOrder": ["Robotics & AI", "Hardware & CAD", "Embedded & EE", "Software & DevOps"]
 }
